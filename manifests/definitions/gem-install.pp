@@ -9,7 +9,7 @@ define rvm::gem::install($gemname = $name, $ruby, $gemset = 'global') {
   }
 
   exec { "${name}":
-    command => "/bin/bash -c '${rvm::params::load} && rvm use ${ruby_with_gemset} && gem install ${gemname}'",
+    command => "/bin/bash -c '${rvm::params::load} && rvm use ${ruby_with_gemset} && gem install ${gemname} --no-ri --no-rdoc'",
     unless => "ls ${rvm::params::root}/gems/${ruby_with_gemset}/gems/ | grep '${gemname}-'",
     require => Exec["rvm install ruby-${ruby}"],
   }
