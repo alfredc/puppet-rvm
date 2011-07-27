@@ -1,6 +1,9 @@
 class rvm::params {
   $root = "/usr/local/rvm"
   $bin = "${root}/bin"
+  # Put this before rvm commands to load rvm properly in shells (as a function)
+  # Example: command => "/bin/bash -c '${load} && rvm list'"
+  $load = "source ${root}/scripts/rvm"
 
   $dependencies = $operatingsystem ? {
     'Ubuntu' => [
