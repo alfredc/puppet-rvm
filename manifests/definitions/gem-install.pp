@@ -11,7 +11,7 @@ define rvm::gem::install($gemname = $name, $ruby, $gemset = 'global') {
   exec { "${name}":
     command => "${rvm::params::bin}/rvm use ${ruby_with_gemset} && ${gem_bin}/gem install ${gemname}",
     unless => "ls ${rvm::params::root}/gems/${ruby_with_gemset}/gems/ | grep '${gemname}-'",
-    require => Rvm::Ruby::Install[$ruby],
+    require => Exec["rvm install ruby-${ruby}"],
   }
 
 }
