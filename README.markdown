@@ -18,6 +18,10 @@ Before you begin, you must add the RVM module to your Puppet installation.  This
 
 You may now continue configuring RVM resources.
 
+## Create resources to ensure all dependencies are installed
+
+See manifests/classes/params for a list of dependencies.
+
 
 ## Install RVM with Puppet
 
