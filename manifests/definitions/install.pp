@@ -11,8 +11,8 @@ define rvm::ruby::install($ruby = $name, $default_ruby = false) {
 
   if $default_ruby {
     exec { "rvm --default use ruby-${ruby}":
-      command => "/bin/bash -c '${rvm::params::load} && rvm --default use ruby-${ruby}'",
-      unless => "rvm list default | grep 'ruby-${ruby}'",
+      command => "${rvm::params::bin}/rvm --default use ruby-${ruby}",
+      unless => "${rvm::params::bin}/rvm list default | grep 'ruby-${ruby}'",
       require => Exec["rvm install ruby-${ruby}"],
     }
   }
