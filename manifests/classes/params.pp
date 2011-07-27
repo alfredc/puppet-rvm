@@ -46,7 +46,7 @@ class rvm::params {
       Package['libxml2-devel'],
       Package['libxslt'],
       Package['libxslt-devel'],
-      Package['readline-devel']
+      Package['readline-devel'],
       Package['patch'],
       Package['git']
     ],
