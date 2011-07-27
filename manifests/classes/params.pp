@@ -1,8 +1,10 @@
 class rvm::params {
   $root = "/usr/local/rvm"
   $bin = "${root}/bin"
-  # Put this before rvm commands to load rvm properly in shells (as a function)
-  # Example: command => "/bin/bash -c '${load} && rvm list'"
+
+  # Put this before rvm commands to load rvm rubies properly in shells (as a function)
+  # Useful for running rvm's ruby or gem binaries
+  # Example: command => "/bin/bash -c '${rvm::params::load} && ruby -v && gem list'"
   $load = "source ${root}/scripts/rvm"
 
   $dependencies = $operatingsystem ? {
