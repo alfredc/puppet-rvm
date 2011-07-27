@@ -12,7 +12,7 @@ class rvm::system {
   }
 
   exec { 'source rvm':
-    command => "[[ -s '${rvm::params::root}/scripts/rvm' ]] && . '${rvm::params::root}/scripts/rvm'",
+    command => "source '${rvm::params::root}/scripts/rvm'",
     require => Exec['system-rvm'],
   }
 
