@@ -11,4 +11,9 @@ class rvm::system {
     require => $rvm::params::dependencies,
   }
 
+  exec { 'source rvm':
+    command => "[[ -s '${rvm::params::root}/scripts/rvm' ]] && . '${rvm::params::root}/scripts/rvm'",
+    require => Exec['system-rvm'],
+  }
+
 }
