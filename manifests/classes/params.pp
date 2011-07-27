@@ -3,7 +3,7 @@ class rvm::params {
   $bin = "${root}/bin/rvm"
 
   $dependencies = $operatingsystem ? {
-    'debian' => [
+    'Ubuntu' => [
       Package['build-essential'],
       Package['bison'],
       Package['openssl'],
@@ -24,7 +24,7 @@ class rvm::params {
       Package['libc6-dev']
     ],
 
-    'centos' => [
+    'CentOS' => [
       Package['which'],
       Package['gcc'],
       Package['gcc-c++'],
