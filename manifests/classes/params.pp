@@ -22,7 +22,7 @@ class rvm::params {
       Package['libxslt1-dev'],
       Package['autoconf'],
       Package['libc6-dev']
-    ]
+    ],
 
     'centos' => [
       Package['which'],
@@ -49,7 +49,7 @@ class rvm::params {
       Package['readline-devel']
       Package['patch'],
       Package['git']
-    ]
+    ],
   }
 
 }
