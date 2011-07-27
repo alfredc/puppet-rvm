@@ -1,4 +1,4 @@
-define rvm::install($ruby = $name, $default_ruby = false) {
+define rvm::ruby::install($ruby = $name, $default_ruby = false) {
 
   include rvm::params
 
