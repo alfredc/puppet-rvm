@@ -6,6 +6,7 @@ define rvm::ruby::install($ruby = $name, $default_ruby = false) {
     command => "$rvm::params::bin/rvm install ruby-${ruby}",
     creates => "/usr/local/rvm/rubies/ruby-${ruby}",
     require => Class['rvm::system'],
+    timeout => 0,  # disable timeout for compiling ruby
   }
 
   if $default_ruby {
