@@ -5,7 +5,7 @@ define rvm::ruby::install($ruby = $name, $default_ruby = false) {
   exec { "rvm install ruby-${ruby}":
     path => $rvm::params::bin,
     creates => "/usr/local/rvm/rubies/ruby-${ruby}",
-    require => Exec['system-rvm'],
+    require => Class['rvm::system'],
   }
 
   if $default_ruby {
